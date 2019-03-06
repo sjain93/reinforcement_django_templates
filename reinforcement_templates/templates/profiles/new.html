@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-  <label for="email">email</label>
+  <!-- <label for="email">email</label>
   <input type="text" name="email" id="email" class="fancy_form" >
 
   <label for="username">username</label>
@@ -16,5 +16,13 @@
   <input type="text" name="address" id="address" class="fancy_form" >
 
   <label for="alias">alias</label>
-  <input type="text" name="alias" id="alias" class="fancy_form" >
+  <input type="text" name="alias" id="alias" class="fancy_form" > -->
+
+  <form action='profiles/new' class="fancy_form">
+    {% for item in field_items %}
+      <label for="{{ item }}">{{ item }}</label>
+      <input type="text" name="{{ item }}" id="{{ item }}">
+    {% endfor %}
+  </form>
+
 {% endblock %}
